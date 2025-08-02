@@ -1858,6 +1858,7 @@ void motor(int accele_l, int accele_r)
         MTU2TGRC_4 = (long)(MOTOR_PWM_CYCLE - 1) * (-accele_l) / 100;
     }
 
+    
     // Right Motor Control
     if (accele_r >= 0)
     {
