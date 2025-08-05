@@ -1233,7 +1233,7 @@ void intTimer(void)
             // else
             // {
 
-            constCrankHandleVal =35;
+            constCrankHandleVal =33;
             // if(constCrankHandleVal>=49){
             //     constCrankHandleVal=49;
             // }
@@ -1243,11 +1243,11 @@ void intTimer(void)
 
             crankHandleValGain = 0;
 
-            constCrankMotorPowerOUT = 40;
-            crankMotorPowerOUTGain = 1;
+            constCrankMotorPowerOUT = 0;
+            crankMotorPowerOUTGain = 0;
 
-            constCrankMotorPowerIN = 70; // 70
-            crankMotorPowerINGain = -2.3;
+            constCrankMotorPowerIN = -80; // 70
+            crankMotorPowerINGain = 0;
             // }
 
             laneStraightMotorPower = 100;
@@ -1848,13 +1848,13 @@ void motor(int accele_l, int accele_r)
     if (accele_l >= 0)
     {
         // forward
-        Left_motor_signal = 0;
+        Left_motor_signal = 1;
         MTU2TGRC_4 = (long)(MOTOR_PWM_CYCLE - 1) * accele_l / 100;
     }
     else
     {
         // reverse
-        Left_motor_signal = 1;
+        Left_motor_signal = 0;
         MTU2TGRC_4 = (long)(MOTOR_PWM_CYCLE - 1) * (-accele_l) / 100;
     }
 
@@ -1863,13 +1863,13 @@ void motor(int accele_l, int accele_r)
     if (accele_r >= 0)
     {
         // forward
-        Right_motor_signal = 1;
+        Right_motor_signal = 0;
         MTU2TGRD_4 = (long)(MOTOR_PWM_CYCLE - 1) * accele_r / 100;
     }
     else
     {
         // reverse
-        Right_motor_signal = 0;
+        Right_motor_signal = 1;
         MTU2TGRD_4 = (long)(MOTOR_PWM_CYCLE - 1) * (-accele_r) / 100;
     }
 }
