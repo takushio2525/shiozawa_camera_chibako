@@ -48,7 +48,7 @@
 // #define LANE_DISTANCE laneDistance = map(encoder.getCnt(), 40, 50, 280, 350);
 // #define LANE_COUNTER_DISTANCE laneCounterDistance = map(encoder.getCnt(), 40, 50, 350, 330);
 
-#define LANE_DISTANCE laneDistance = 340;
+#define LANE_DISTANCE laneDistance = 300;
 #define LANE_COUNTER_DISTANCE laneCounterDistance = 250;
 
 //------------------------------------------------------------------//
@@ -1504,8 +1504,8 @@ void intTimer(void)
             break;
         }
         createBrakeMotorVal(43);
-        motor(leftBrakeMotor, rightBrakeMotor);
-        // motor(leftMotor, rightMotor);
+        //motor(leftBrakeMotor, rightBrakeMotor);
+        motor(leftMotor, rightMotor);
         handle(handleVal);
         break;
 
@@ -1636,8 +1636,8 @@ void intTimer(void)
             break;
         }
         createBrakeMotorVal(43);
-        motor(leftBrakeMotor, rightBrakeMotor);
-        // motor(leftMotor, rightMotor);
+        //motor(leftBrakeMotor, rightBrakeMotor);
+        motor(leftMotor, rightMotor);
         handle(handleVal);
         break;
 
